@@ -1,0 +1,18 @@
+Vision Biomedical Services — Netlify-ready deployment package
+
+Upload this ZIP directly to the existing Netlify site's manual deploy area.
+The ZIP root already contains index.html, so the home page is the deployment root.
+
+Included routes:
+/
+/about-us/
+/services/
+/regulatory-compliance/
+/news/
+/contact-us/
+/get-a-quote/
+
+The production HTML files are self-contained. The assets/ folder is included as a complete safety copy of the source images/fonts/licenses.
+
+
+Rebuild shared route entries after editing index.html: node build.cjs
