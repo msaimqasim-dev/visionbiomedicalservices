@@ -10,9 +10,13 @@ Included routes:
 /regulatory-compliance/
 /news/
 /contact-us/
+/careers/
 /get-a-quote/
 
 The production HTML files are self-contained. The assets/ folder is included as a complete safety copy of the source images/fonts/licenses.
 
 
 Rebuild shared route entries after editing index.html: node build.cjs
+
+To hide Career navigation later, set CAREERS_ENABLED = false in index.html and run node build.cjs.
+The /careers/ page remains available when its navigation links are hidden.

@@ -5,7 +5,7 @@ const vm = require('vm');
 const source = fs.readFileSync('index.html','utf8');
 new vm.Script(source.match(/<script>([\s\S]*?)<\/script>/)[1]);
 const routes = [...source.matchAll(/^ '(\/[^']*)':\{title:'([^']*)',description:'([^']*)'/gm)];
-if(routes.length!==7) throw Error('Expected seven service website routes');
+if(routes.length!==8) throw Error('Expected eight website routes');
 for(const [,route,title,description] of routes){
   if(route==='/') continue;
   const html=source.replace('data-start="/"',`data-start="${route}"`)
@@ -14,4 +14,4 @@ for(const [,route,title,description] of routes){
   fs.mkdirSync('.'+route,{recursive:true});
   fs.writeFileSync('.'+route+'/index.html',html);
 }
-console.log('Built and syntax-checked all seven static route entries.');
+console.log('Built and syntax-checked all eight static route entries.');
